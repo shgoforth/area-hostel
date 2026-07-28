@@ -51,11 +51,6 @@ export function SiteHeader({ transparentAtTop = true }: { transparentAtTop?: boo
                 </li>
               ))}
             </ul>
-            <div className="flex items-center gap-3 text-accent">
-              <a href="#" aria-label="Instagram"><Instagram className="h-4 w-4" /></a>
-              <a href="#" aria-label="Facebook"><Facebook className="h-4 w-4" /></a>
-              <a href="#" aria-label="Twitter"><Twitter className="h-4 w-4" /></a>
-            </div>
             <CartButton count={count} onClick={() => setCartOpen(true)} />
             <Link
               to="/hostel"
