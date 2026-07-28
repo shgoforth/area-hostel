@@ -1,0 +1,37 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-ocean: var(--ocean);
+  --color-ocean-deep: var(--ocean-deep);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --font-display: "Oswald", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+:root {
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.15 0.02 220);
+  --ink: oklch(0.12 0.02 220);
+  --ocean: oklch(0.55 0.08 210);
+  --ocean-deep: oklch(0.22 0.04 220);
+  --accent: oklch(0.78 0.13 75);
+  --muted: oklch(0.55 0.02 220);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+}
