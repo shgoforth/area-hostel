@@ -131,7 +131,7 @@ function SurfPage() {
       {/* CATALOGUE — dark */}
       <section id="catalogue" className="relative overflow-hidden bg-[#050914] py-24 md:py-32">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.06),transparent_60%)]" />
-        <div className="relative mx-auto max-w-6xl px-6 md:px-16">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 md:px-10 lg:px-16">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-accent">01 · The fleet</p>
@@ -155,7 +155,7 @@ function SurfPage() {
             </div>
           </div>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
             {boards.map((b) => {
               const active = board === b.slug;
               return (
@@ -163,11 +163,11 @@ function SurfPage() {
                   key={b.slug}
                   type="button"
                   onClick={() => { setBoard(b.slug); document.getElementById("book")?.scrollIntoView({ behavior: "smooth" }); }}
-                  className={`group relative flex flex-col overflow-hidden rounded-3xl border p-5 text-left transition ${
+                  className={`group relative flex h-full min-w-0 flex-col overflow-hidden rounded-3xl border p-5 text-left transition ${
                     active ? "border-accent bg-accent/10" : "border-white/10 bg-white/[0.03] hover:border-white/30 hover:bg-white/[0.06]"
                   }`}
                 >
-                  <div className="relative flex h-56 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-white/[0.08] via-white/[0.02] to-transparent">
+                  <div className="relative flex h-48 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-white/[0.08] via-white/[0.02] to-transparent sm:h-56">
                     <img src={b.img} alt={`${b.name} surfboard`} loading="lazy" className="h-full w-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.5)] transition duration-500 group-hover:scale-105" />
                   </div>
                   <div className="mt-5 flex items-start justify-between gap-2">
@@ -195,7 +195,7 @@ function SurfPage() {
         <img src={bookingBoards} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#050914] via-[#050914]/85 to-[#050914]" />
 
-        <div className="relative mx-auto max-w-6xl px-6 md:px-16">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 md:px-10 lg:px-16">
           <div className="max-w-2xl">
             <p className="text-[11px] font-bold tracking-[0.4em] text-accent">RESERVE · TWO STEPS</p>
             <h2 className="mt-4 font-display text-4xl font-bold leading-[0.95] text-white sm:text-5xl md:text-6xl">
@@ -220,7 +220,7 @@ function SurfPage() {
                         key={f.id}
                         type="button"
                         onClick={() => setFormula(f.id)}
-                        className={`relative rounded-2xl border p-4 text-left transition ${
+                        className={`relative h-full rounded-2xl border p-4 text-left transition ${
                           active ? "border-accent bg-accent/10" : "border-white/10 bg-white/[0.02] hover:border-white/25"
                         }`}
                       >
@@ -302,18 +302,18 @@ function SurfPage() {
                 </div>
               </div>
 
-              <div className="mt-8 grid gap-5 sm:grid-cols-3">
-                <label className="block">
+              <div className="mt-8 grid gap-4 sm:grid-cols-3 sm:gap-5">
+                <label className="flex h-full flex-col">
                   <span className="text-[10px] font-bold tracking-[0.3em] text-accent">PEOPLE</span>
-                  <input type="number" min={1} max={12} value={people} onChange={(e) => setPeople(e.target.value.slice(0, 2))} className="mt-2 h-11 w-full rounded-xl border border-white/15 bg-white/[0.04] px-3 text-sm text-white outline-none focus:border-accent" />
+                  <input type="number" min={1} max={12} value={people} onChange={(e) => setPeople(e.target.value.slice(0, 2))} className="mt-3 h-11 w-full rounded-2xl border border-white/15 bg-white/[0.04] px-4 text-sm text-white outline-none focus:border-accent" />
                 </label>
-                <label className="block">
+                <label className="flex h-full flex-col">
                   <span className="text-[10px] font-bold tracking-[0.3em] text-accent">DATE</span>
-                  <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="mt-2 h-11 w-full rounded-xl border border-white/15 bg-white/[0.04] px-3 text-sm text-white outline-none focus:border-accent" />
+                  <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="mt-3 h-11 w-full rounded-2xl border border-white/15 bg-white/[0.04] px-4 text-sm text-white outline-none focus:border-accent" />
                 </label>
-                <label className="block">
+                <label className="flex h-full flex-col">
                   <span className="text-[10px] font-bold tracking-[0.3em] text-accent">NAME (OPTIONAL)</span>
-                  <input type="text" value={name} placeholder="e.g. Yassine" onChange={(e) => setName(e.target.value.slice(0, 60))} className="mt-2 h-11 w-full rounded-xl border border-white/15 bg-white/[0.04] px-3 text-sm text-white outline-none focus:border-accent" />
+                  <input type="text" value={name} placeholder="e.g. Yassine" onChange={(e) => setName(e.target.value.slice(0, 60))} className="mt-3 h-11 w-full rounded-2xl border border-white/15 bg-white/[0.04] px-4 text-sm text-white outline-none focus:border-accent" />
                 </label>
               </div>
 
@@ -349,7 +349,7 @@ function SurfPage() {
 
       {/* SPOTS — images only */}
       <section className="relative overflow-hidden bg-[#050914] pb-24 md:pb-32">
-        <div className="mx-auto max-w-6xl px-6 md:px-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-10 lg:px-16">
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-accent">03 · Local waves</p>
           <h2 className="mt-3 font-display text-4xl font-bold text-white sm:text-5xl">Surf spots around Anza</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
