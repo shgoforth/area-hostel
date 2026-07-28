@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroWave from "@/assets/hero-wave.jpg";
+import surfHeroImage from "../area source/surf hero image.jpeg";
 import spotAnzaCard from "@/assets/spot-anza.png";
 import spotTaghazoutCard from "@/assets/spot-taghazout.png";
 import spotImsouaneCard from "@/assets/spot-imsouane.png";
@@ -41,7 +41,7 @@ function Index() {
 
       {/* HERO */}
       <section className="relative h-screen min-h-[720px] w-full overflow-hidden">
-        <img src={heroWave} alt="Surfer riding a barrel wave" className="absolute inset-0 h-full w-full object-cover" width={1920} height={1200} />
+        <img src={surfHeroImage} alt="Surf hero image" className="absolute inset-0 h-full w-full object-cover" width={1920} height={1200} />
         <div className="absolute inset-0 bg-gradient-to-b from-ocean-deep/50 via-transparent to-ocean-deep/60" />
 
         <div className="relative z-10 flex h-full items-center px-8 md:px-32">
