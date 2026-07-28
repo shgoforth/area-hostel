@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { products, categories, sizes } from "@/lib/area-data";
 import { useCart, parsePrice } from "@/lib/cart";
-const themeHero = "/__l5e/assets-v1/c25e71f8-1436-43bc-9747-0e14bf303ea9/surf-hero.jpg";
+import shopHero from "@/assets/shop-hero-new.png";
 
 const TITLE = "ÁREA Clothing Shop — Apparel, Wetsuits & Accessories";
 const DESC = "Shop the ÁREA line from Anza, Agadir: tees, hoodies and boardshorts, wetsuits and everyday accessories made for surfers.";
@@ -19,8 +19,8 @@ export const Route = createFileRoute("/shop")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: themeHero },
-      { name: "twitter:image", content: themeHero },
+      { property: "og:image", content: shopHero },
+      { name: "twitter:image", content: shopHero },
     ],
   }),
   component: ShopPage,
@@ -42,7 +42,7 @@ function ShopPage() {
 
       {/* HERO */}
       <section className="relative h-[85vh] min-h-[560px] w-full overflow-hidden bg-[#050914]">
-        <img src={themeHero} alt="ÁREA typographic surf hero" className="fixed inset-0 h-full w-full object-cover object-center opacity-90" />
+        <img src={shopHero} alt="ÁREA typographic surf hero" className="absolute inset-0 h-full w-full object-cover object-center opacity-90" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#050914]/40 via-transparent to-[#050914]" />
         <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-end px-6 pb-20 md:px-16">
           <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-accent">Made in Anza · Worn in the water</p>

@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Facebook } from "lucide-react";
-import areaLogo from "@/assets/area-hostel-logo.jpeg";
+import areaLogo from "@/assets/area-hostel-logo.png";
 
 const COLUMNS = [
   {

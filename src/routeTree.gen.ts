@@ -9,26 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SurfRouteImport } from './routes/surf'
-import { Route as ShopRouteImport } from './routes/shop'
-import { Route as HostelRouteImport } from './routes/hostel'
-import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as HostelRouteImport } from './routes/hostel'
+import { Route as ShopRouteImport } from './routes/shop'
+import { Route as SurfRouteImport } from './routes/surf'
 import { Route as ShopProductIdRouteImport } from './routes/shop.$productId'
 
-const SurfRoute = SurfRouteImport.update({
-  id: '/surf',
-  path: '/surf',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ShopRoute = ShopRouteImport.update({
-  id: '/shop',
-  path: '/shop',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HostelRoute = HostelRouteImport.update({
-  id: '/hostel',
-  path: '/hostel',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CheckoutRoute = CheckoutRouteImport.update({
@@ -36,9 +26,19 @@ const CheckoutRoute = CheckoutRouteImport.update({
   path: '/checkout',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const HostelRoute = HostelRouteImport.update({
+  id: '/hostel',
+  path: '/hostel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopRoute = ShopRouteImport.update({
+  id: '/shop',
+  path: '/shop',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SurfRoute = SurfRouteImport.update({
+  id: '/surf',
+  path: '/surf',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ShopProductIdRoute = ShopProductIdRouteImport.update({
@@ -75,12 +75,7 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
-    | '/checkout'
-    | '/hostel'
-    | '/shop'
-    | '/surf'
-    | '/shop/$productId'
+    '/' | '/checkout' | '/hostel' | '/shop' | '/surf' | '/shop/$productId'
   fileRoutesByTo: FileRoutesByTo
   to: '/' | '/checkout' | '/hostel' | '/shop' | '/surf' | '/shop/$productId'
   id:
@@ -103,25 +98,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/surf': {
-      id: '/surf'
-      path: '/surf'
-      fullPath: '/surf'
-      preLoaderRoute: typeof SurfRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/shop': {
-      id: '/shop'
-      path: '/shop'
-      fullPath: '/shop'
-      preLoaderRoute: typeof ShopRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/hostel': {
-      id: '/hostel'
-      path: '/hostel'
-      fullPath: '/hostel'
-      preLoaderRoute: typeof HostelRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/checkout': {
@@ -131,11 +112,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CheckoutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/hostel': {
+      id: '/hostel'
+      path: '/hostel'
+      fullPath: '/hostel'
+      preLoaderRoute: typeof HostelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop': {
+      id: '/shop'
+      path: '/shop'
+      fullPath: '/shop'
+      preLoaderRoute: typeof ShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/surf': {
+      id: '/surf'
+      path: '/surf'
+      fullPath: '/surf'
+      preLoaderRoute: typeof SurfRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shop/$productId': {

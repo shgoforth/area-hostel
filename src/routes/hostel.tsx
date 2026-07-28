@@ -4,7 +4,7 @@ import { Wifi, CookingPot, Sun, Waves, ShowerHead } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { rooms } from "@/lib/area-data";
-const themeHero = "/__l5e/assets-v1/c25e71f8-1436-43bc-9747-0e14bf303ea9/surf-hero.jpg";
+const hostelHero = { url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80" };
 
 const TITLE = "Surf Hostel in Anza, Agadir — ÁREA";
 const DESC = "Dorm beds, private doubles and surf cabins steps from Anza beach. Free wifi, shared kitchen, rooftop terrace and secure board storage.";
@@ -18,8 +18,8 @@ export const Route = createFileRoute("/hostel")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: themeHero },
-      { name: "twitter:image", content: themeHero },
+      { property: "og:image", content: hostelHero.url },
+      { name: "twitter:image", content: hostelHero.url },
     ],
   }),
   component: HostelPage,
@@ -58,7 +58,7 @@ function HostelPage() {
 
       {/* HERO */}
       <section className="relative h-[70vh] min-h-[520px] w-full overflow-hidden">
-        <img src={themeHero} alt="ÁREA surf hostel exterior" className="fixed inset-0 h-full w-full object-cover" />
+        <img src={hostelHero.url} alt="ÁREA surf hostel exterior" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-ocean-deep/70 via-ocean-deep/30 to-ocean-deep/70" />
         <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-end px-6 pb-16 md:px-16">
           <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-accent">Beds · Breakfast · Board storage</p>

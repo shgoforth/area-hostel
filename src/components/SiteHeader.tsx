@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Instagram, Facebook, Twitter, Menu, X, ShoppingBag } from "lucide-react";
-import areaLogo from "@/assets/area-hostel-logo.jpeg";
+import areaLogo from "@/assets/area-hostel-logo.png";
 import { useCart } from "@/lib/cart";
 
 const NAV = [

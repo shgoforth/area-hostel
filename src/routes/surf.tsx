@@ -5,11 +5,11 @@ import { MessageCircle, CreditCard, Check, X, Lock } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { boards } from "@/lib/area-data";
-const themeHero = "/__l5e/assets-v1/c25e71f8-1436-43bc-9747-0e14bf303ea9/surf-hero.jpg";
-import spotAnza from "@/assets/spot-anza.png";
-import spotTaghazout from "@/assets/spot-taghazout.png";
-import spotImsouane from "@/assets/spot-imsouane.png";
-import bookingBoards from "@/assets/booking-boards.jpg.asset.json";
+import surfHero from "@/assets/area-surf-hero.jpg";
+import spotAnza from "@/assets/spot-anza-new.png";
+import spotTaghazout from "@/assets/spot-taghazout-new.png";
+import spotImsouane from "@/assets/spot-imsouane-new.png";
+import bookingBoards from "@/assets/booking-boards.jpg";
 
 const WHATSAPP_NUMBER = "212667281744"; // +212 667 281 744
 
@@ -90,9 +90,9 @@ function SurfPage() {
       {/* HERO — full-bleed cinematic */}
       <section className="relative isolate min-h-screen w-full overflow-hidden bg-[#050914]">
         <img
-          src={themeHero}
+          src={surfHero}
           alt="AREA — surfer inside a barrel at dawn"
-          className="fixed inset-0 h-full w-full object-cover object-center"
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
         {/* Cinematic gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#050914]/60 via-transparent to-[#050914]/90" />
@@ -192,7 +192,7 @@ function SurfPage() {
 
       {/* BOOKING */}
       <section id="book" className="relative overflow-hidden bg-[#050914] py-24 md:py-32">
-        <img src={bookingBoards.url} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-20" />
+        <img src={bookingBoards} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#050914] via-[#050914]/85 to-[#050914]" />
 
         <div className="relative mx-auto max-w-6xl px-6 md:px-16">

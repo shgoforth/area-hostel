@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-const themeHero = "/__l5e/assets-v1/c25e71f8-1436-43bc-9747-0e14bf303ea9/surf-hero.jpg";
-import spotAnzaCard from "@/assets/spot-anza.png";
-import spotTaghazoutCard from "@/assets/spot-taghazout.png";
-import spotImsouaneCard from "@/assets/spot-imsouane.png";
-import areaStore from "@/assets/area-store.png.asset.json";
+import heroWave from "@/assets/hero-wave.jpg";
+import spotAnzaCard from "@/assets/spot-anza-new.png";
+import spotTaghazoutCard from "@/assets/spot-taghazout-new.png";
+import spotImsouaneCard from "@/assets/spot-imsouane-new.png";
+import areaStore from "@/assets/area-store.png";
 import board1 from "@/assets/board-1.png";
 import board2 from "@/assets/board-2.png";
 import board3 from "@/assets/board-3.png";
@@ -41,7 +41,7 @@ function Index() {
 
       {/* HERO */}
       <section className="relative h-screen min-h-[720px] w-full overflow-hidden">
-        <img src={themeHero} alt="Surf hero image" className="fixed inset-0 h-full w-full object-cover" width={1920} height={1200} />
+        <img src={heroWave} alt="Surfer riding a barrel wave" className="absolute inset-0 h-full w-full object-cover" width={1920} height={1200} />
         <div className="absolute inset-0 bg-gradient-to-b from-ocean-deep/50 via-transparent to-ocean-deep/60" />
 
         <div className="relative z-10 flex h-full items-center px-8 md:px-32">
@@ -245,7 +245,7 @@ function Index() {
             <div className="relative">
               <div className="overflow-hidden rounded-2xl shadow-xl ring-1 ring-ocean-deep/10">
                 <img
-                  src={areaStore.url}
+                  src={areaStore}
                   alt="Inside the ÁREA Clothing store in Agadir"
                   className="h-full w-full object-cover"
                   width={1200}
