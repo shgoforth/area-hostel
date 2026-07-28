@@ -58,7 +58,7 @@ function HostelPage() {
 
       {/* HERO */}
       <section className="relative h-[70vh] min-h-[520px] w-full overflow-hidden">
-        <img src={hostelHero.url} alt="ÁREA surf hostel exterior" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={hostelHero.url} alt="ÁREA surf hostel exterior" className="fixed inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-ocean-deep/70 via-ocean-deep/30 to-ocean-deep/70" />
         <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-end px-6 pb-16 md:px-16">
           <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-accent">Beds · Breakfast · Board storage</p>

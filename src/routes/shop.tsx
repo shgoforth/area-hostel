@@ -42,7 +42,7 @@ function ShopPage() {
 
       {/* HERO */}
       <section className="relative h-[85vh] min-h-[560px] w-full overflow-hidden bg-[#050914]">
-        <img src={shopHero.url} alt="ÁREA typographic surf hero" className="absolute inset-0 h-full w-full object-cover object-center opacity-90" />
+        <img src={shopHero.url} alt="ÁREA typographic surf hero" className="fixed inset-0 h-full w-full object-cover object-center opacity-90" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#050914]/40 via-transparent to-[#050914]" />
         <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-end px-6 pb-20 md:px-16">
           <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-accent">Made in Anza · Worn in the water</p>

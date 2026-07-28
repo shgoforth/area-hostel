@@ -92,7 +92,7 @@ function SurfPage() {
         <img
           src={surfHero.url}
           alt="AREA — surfer inside a barrel at dawn"
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="fixed inset-0 h-full w-full object-cover object-center"
         />
         {/* Cinematic gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#050914]/60 via-transparent to-[#050914]/90" />
