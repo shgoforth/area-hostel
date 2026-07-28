@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Instagram, Facebook, Twitter, Menu, X, ShoppingBag } from "lucide-react";
+import { Menu, X, ShoppingBag } from "lucide-react";
 import areaLogo from "@/assets/area-hostel-logo.png";
 import { useCart } from "@/lib/cart";
 
@@ -107,11 +107,6 @@ export function SiteHeader({ transparentAtTop = true }: { transparentAtTop?: boo
             </li>
           </ul>
           <div className="flex flex-col items-center gap-6 pb-12">
-            <div className="flex gap-6 text-accent">
-              <Instagram className="h-5 w-5" />
-              <Facebook className="h-5 w-5" />
-              <Twitter className="h-5 w-5" />
-            </div>
             <Link
               to="/hostel"
               hash="book"
