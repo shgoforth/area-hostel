@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Instagram, Facebook, Waves, BedDouble, ShoppingBag } from "lucide-react";
+import { Instagram, Facebook, Waves, BedDouble, ShoppingBag, MapPin } from "lucide-react";
 import heroWave from "@/assets/hero-wave.jpg";
 
 const TITLE = "ÁREA — Links";
@@ -120,7 +120,7 @@ function LinksPage() {
 
       <div className="relative mx-auto flex min-h-screen max-w-md flex-col items-center px-6 py-14">
         <div className="flex h-24 w-24 items-center justify-center rounded-full border-2 border-accent bg-ocean-deep shadow-xl">
-          <span className="font-display text-2xl font-bold tracking-widest text-accent">ÁREA</span>
+          <img src="/favicon.png" alt="ÁREA logo" className="h-14 w-14 object-contain" />
         </div>
 
         <h1 className="mt-5 font-display text-2xl font-bold tracking-wide">ÁREA Surf & Clothing</h1>
@@ -151,6 +151,16 @@ function LinksPage() {
           <ShoppingBag className="h-4 w-4" />
           Shop Now
         </Link>
+
+        <a
+          href="https://maps.app.goo.gl/wPZtL6rufovGvGR58?g_st=ic"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-4 font-display text-sm font-bold uppercase tracking-[0.35em] text-white shadow-lg transition hover:border-accent hover:bg-white/20"
+        >
+          <MapPin className="h-4 w-4" />
+          Open Google Maps
+        </a>
       </div>
     </main>
   );
