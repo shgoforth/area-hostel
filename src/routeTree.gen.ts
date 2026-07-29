@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as HostelRouteImport } from './routes/hostel'
+import { Route as LinksRouteImport } from './routes/links'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as SurfRouteImport } from './routes/surf'
 import { Route as ShopProductIdRouteImport } from './routes/shop.$productId'
@@ -29,6 +30,11 @@ const CheckoutRoute = CheckoutRouteImport.update({
 const HostelRoute = HostelRouteImport.update({
   id: '/hostel',
   path: '/hostel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LinksRoute = LinksRouteImport.update({
+  id: '/links',
+  path: '/links',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ShopRoute = ShopRouteImport.update({
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/checkout': typeof CheckoutRoute
   '/hostel': typeof HostelRoute
+  '/links': typeof LinksRoute
   '/shop': typeof ShopRouteWithChildren
   '/surf': typeof SurfRoute
   '/shop/$productId': typeof ShopProductIdRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/checkout': typeof CheckoutRoute
   '/hostel': typeof HostelRoute
+  '/links': typeof LinksRoute
   '/shop': typeof ShopRouteWithChildren
   '/surf': typeof SurfRoute
   '/shop/$productId': typeof ShopProductIdRoute
@@ -68,6 +76,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/checkout': typeof CheckoutRoute
   '/hostel': typeof HostelRoute
+  '/links': typeof LinksRoute
   '/shop': typeof ShopRouteWithChildren
   '/surf': typeof SurfRoute
   '/shop/$productId': typeof ShopProductIdRoute
@@ -75,14 +84,28 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/checkout' | '/hostel' | '/shop' | '/surf' | '/shop/$productId'
+    | '/'
+    | '/checkout'
+    | '/hostel'
+    | '/links'
+    | '/shop'
+    | '/surf'
+    | '/shop/$productId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/checkout' | '/hostel' | '/shop' | '/surf' | '/shop/$productId'
+  to:
+    | '/'
+    | '/checkout'
+    | '/hostel'
+    | '/links'
+    | '/shop'
+    | '/surf'
+    | '/shop/$productId'
   id:
     | '__root__'
     | '/'
     | '/checkout'
     | '/hostel'
+    | '/links'
     | '/shop'
     | '/surf'
     | '/shop/$productId'
@@ -92,6 +115,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CheckoutRoute: typeof CheckoutRoute
   HostelRoute: typeof HostelRoute
+  LinksRoute: typeof LinksRoute
   ShopRoute: typeof ShopRouteWithChildren
   SurfRoute: typeof SurfRoute
 }
@@ -117,6 +141,13 @@ declare module '@tanstack/react-router' {
       path: '/hostel'
       fullPath: '/hostel'
       preLoaderRoute: typeof HostelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/links': {
+      id: '/links'
+      path: '/links'
+      fullPath: '/links'
+      preLoaderRoute: typeof LinksRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shop': {
@@ -157,6 +188,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CheckoutRoute: CheckoutRoute,
   HostelRoute: HostelRoute,
+  LinksRoute: LinksRoute,
   ShopRoute: ShopRouteWithChildren,
   SurfRoute: SurfRoute,
 }
