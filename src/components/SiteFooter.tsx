@@ -73,10 +73,16 @@ export function SiteFooter() {
             <div className="mt-6 space-y-1 text-xs uppercase tracking-[0.15em] text-white/70">
               <p>Anza, Agadir · Morocco</p>
               <p>
-                <a href="https://wa.me/212667281744" target="_blank" rel="noopener noreferrer" className="transition hover:text-accent">
-                  06 67 28 17 44
+                <a href="https://wa.me/+212667281744" target="_blank" rel="noopener noreferrer" className="transition hover:text-accent">
+                  +212 6 67 28 17 44
                 </a>
-                <span className="mx-2">·</span>
+              </p>
+              <p>
+                <a href="https://wa.me/+212659506557" target="_blank" rel="noopener noreferrer" className="transition hover:text-accent">
+                  +212 659-506557
+                </a>
+              </p>
+              <p>
                 <a href="mailto:surf@areahostel.com" className="transition hover:text-accent">surf@areahostel.com</a>
               </p>
             </div>
@@ -87,12 +93,12 @@ export function SiteFooter() {
           © ÁREA HOSTEL {new Date().getFullYear()}
         </p>
 
-        <div className="relative flex items-end justify-center overflow-hidden px-4">
+        <div className="relative flex items-end justify-center px-4 pb-4 sm:px-6 sm:pb-8">
           <img
             src={areaLogo}
             alt="ÁREA Hostel"
             loading="lazy"
-            className="w-full max-w-[640px] translate-y-[4%] select-none object-contain"
+            className="w-full max-w-[640px] -translate-y-1 select-none object-contain sm:-translate-y-2"
           />
         </div>
       </div>
