@@ -13,7 +13,6 @@ import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
 import { CartProvider } from "@/lib/cart";
 import { CartDrawer } from "@/components/CartDrawer";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -40,9 +39,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -82,16 +78,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "ÁREA Surf Hostel — Anza, Agadir, Morocco" },
       { name: "description", content: "Surf, stay, and ride the Atlantic at ÁREA — surf hostel & school in Anza, Agadir. Lessons, boards, and unforgettable waves." },
-      { name: "author", content: "Lovable" },
+      { name: "author", content: "AREA Hostel" },
       { property: "og:title", content: "ÁREA Surf Hostel — Anza, Agadir, Morocco" },
       { property: "og:description", content: "Surf, stay, and ride the Atlantic at ÁREA — surf hostel & school in Anza, Agadir. Lessons, boards, and unforgettable waves." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "ÁREA Surf Hostel — Anza, Agadir, Morocco" },
       { name: "twitter:description", content: "Surf, stay, and ride the Atlantic at ÁREA — surf hostel & school in Anza, Agadir. Lessons, boards, and unforgettable waves." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7f4c44ec-c25f-428b-bf8a-1b2195f2cf41/id-preview-08ccb92e--abeccf18-d7c2-4336-8e34-97dd56b0ce0b.lovable.app-1785165801367.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7f4c44ec-c25f-428b-bf8a-1b2195f2cf41/id-preview-08ccb92e--abeccf18-d7c2-4336-8e34-97dd56b0ce0b.lovable.app-1785165801367.png" },
+      { property: "og:image", content: "https://areahostel.com/favicon.png" },
+      { name: "twitter:image", content: "https://areahostel.com/favicon.png" },
     ],
     links: [
       {
@@ -101,6 +96,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/favicon.png" },
+      { rel: "sitemap", href: "/sitemap.xml", type: "application/xml" },
     ],
   }),
   shellComponent: RootShell,
@@ -114,6 +110,15 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        {/* Google tag (gtag.js) - global site tag for Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BRLLXZ1E0D"></script>
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);} 
+          gtag('js', new Date());
+
+          gtag('config', 'G-BRLLXZ1E0D');
+        ` }} />
       </head>
       <body>
         {children}
