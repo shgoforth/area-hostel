@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://areahostel.com/sitemap.xml
+Sitemap: https://www.areahostel.com/sitemap.xml
