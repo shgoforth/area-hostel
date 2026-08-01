@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 import { Toaster } from "sonner";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import appCss from "../styles.css?url";
 import { CartProvider } from "@/lib/cart";
@@ -138,6 +139,7 @@ function RootComponent() {
         <Outlet />
         <CartDrawer />
         <Toaster position="top-right" richColors />
+        <SpeedInsights />
       </CartProvider>
     </QueryClientProvider>
   );
