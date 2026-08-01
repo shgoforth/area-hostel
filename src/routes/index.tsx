@@ -16,15 +16,22 @@ import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
+const SEO_TITLE = "ÁREA Hostel in Anza, Agadir, Morocco | Surf Hostel & Stay";
+const SEO_DESCRIPTION = "ÁREA Hostel is the surf-focused area hostel in Anza, Agadir, Morocco. Stay steps from the beach with dorm beds, private cabins, board storage, surf lessons, and a social base for your trip.";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ÁREA Surf Hostel — Anza, Agadir, Morocco" },
-      { name: "description", content: "Surf, stay, and ride the Atlantic at ÁREA — surf hostel & school in Anza, Agadir. Lessons, boards, and unforgettable waves." },
-      { property: "og:title", content: "ÁREA Surf Hostel — Anza, Agadir, Morocco" },
-      { property: "og:description", content: "Surf, stay, and ride the Atlantic at ÁREA — surf hostel & school in Anza, Agadir. Lessons, boards, and unforgettable waves." },
+      { title: SEO_TITLE },
+      { name: "description", content: SEO_DESCRIPTION },
+      { name: "keywords", content: "ÁREA Hostel, area hostel, surf hostel, hostel in Anza, Agadir hostel, surf stay Anza" },
+      { property: "og:title", content: SEO_TITLE },
+      { property: "og:description", content: SEO_DESCRIPTION },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://areahostel.com/" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: SEO_TITLE },
+      { name: "twitter:description", content: SEO_DESCRIPTION },
     ],
     links: [
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" },
@@ -41,15 +48,17 @@ function Index() {
 
       {/* HERO */}
       <section className="relative h-screen min-h-[720px] w-full overflow-hidden">
-        <img src={heroWave} alt="Surfer riding a barrel wave" className="absolute inset-0 h-full w-full object-cover" width={1920} height={1200} />
+        <img src={heroWave} alt="ÁREA Hostel in Anza, Agadir with surfers riding the Atlantic waves" className="absolute inset-0 h-full w-full object-cover" width={1920} height={1200} />
         <div className="absolute inset-0 bg-gradient-to-b from-ocean-deep/50 via-transparent to-ocean-deep/60" />
 
         <div className="relative z-10 flex h-full items-center px-8 md:px-32">
           <div className="text-white max-w-lg">
             <h1 className="font-display text-6xl font-bold leading-[0.95] md:text-7xl">
-              Let's Ride<br />A Wave
+              ÁREA Hostel<br />in Anza, Agadir
             </h1>
-            <p className="mt-4 text-base opacity-90">Best beaches on<br />the Atlantic coast</p>
+            <p className="mt-4 text-base opacity-90">
+              The area hostel for surfers who want clean waves, social stays, and easy access to the Atlantic coast.
+            </p>
             <div className="mt-8 flex items-center gap-4">
               <a href="#surf" className="rounded-full bg-accent px-6 py-3 text-xs font-bold tracking-widest text-ocean-deep">
                 GET STARTED
@@ -57,6 +66,37 @@ function Index() {
               <a href="#surf" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/70 text-white">
                 <ArrowDown className="h-4 w-4" />
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16 md:py-20">
+        <div className="mx-auto max-w-6xl px-6 md:px-16">
+          <div className="max-w-3xl">
+            <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-accent">Your surf base</p>
+            <h2 className="mt-3 font-display text-4xl font-bold text-ink md:text-5xl">
+              Stay at the area hostel built for surfers
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-muted">
+              ÁREA Hostel is the go-to area hostel for travelers looking for a surf hostel in Anza, Agadir with dorm beds, private cabins, board storage, hot showers, and easy access to the best breaks nearby.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border border-ocean-deep/10 bg-background p-6 shadow-sm">
+              <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-accent">01 — Stay</p>
+              <h3 className="mt-3 font-display text-xl font-bold text-ink">Dorm beds & private cabins</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">Choose a social dorm bed or a quieter private room just a short walk from the beach.</p>
+            </div>
+            <div className="rounded-2xl border border-ocean-deep/10 bg-background p-6 shadow-sm">
+              <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-accent">02 — Surf</p>
+              <h3 className="mt-3 font-display text-xl font-bold text-ink">Board rental & lessons</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">Rent a board, join a lesson, and get local advice for the best waves around Anza.</p>
+            </div>
+            <div className="rounded-2xl border border-ocean-deep/10 bg-background p-6 shadow-sm">
+              <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-accent">03 — Community</p>
+              <h3 className="mt-3 font-display text-xl font-bold text-ink">A real surf community</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">Meet other travelers, share breakfast, and keep the day simple with everything under one roof.</p>
             </div>
           </div>
         </div>
@@ -173,10 +213,10 @@ function Index() {
               Stay with us
             </p>
             <h2 className="mt-4 font-display text-5xl font-bold leading-[0.95] text-white md:text-7xl">
-              Book<br />the hostel
+              Book<br />ÁREA Hostel
             </h2>
             <p className="mt-6 max-w-md font-body text-sm leading-relaxed text-white/80">
-              Sleep steps from the break. Dorm beds, private cabins, hot showers, board storage and a shared kitchen open all summer long.
+              Reserve your stay at the area hostel in Anza, Agadir and wake up close to the beach, with dorm beds, private cabins, surf-ready amenities, and a social surf base for every trip.
             </p>
 
             <form
@@ -294,6 +334,29 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LodgingBusiness",
+          name: "ÁREA Hostel",
+          url: "https://areahostel.com/hostel",
+          description: SEO_DESCRIPTION,
+          keywords: "ÁREA Hostel, area hostel, surf hostel, hostel in Anza, Agadir hostel",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Anza",
+            addressRegion: "Agadir",
+            addressCountry: "MA",
+          },
+          amenityFeature: [
+            { "@type": "LocationFeatureSpecification", name: "Dorm beds" },
+            { "@type": "LocationFeatureSpecification", name: "Private cabins" },
+            { "@type": "LocationFeatureSpecification", name: "Board storage" },
+            { "@type": "LocationFeatureSpecification", name: "Surf lessons" },
+          ],
+        }),
+      }} />
 
       <SiteFooter />
     </div>
