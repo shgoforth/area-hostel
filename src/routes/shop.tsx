@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { products, categories, sizes } from "@/lib/area-data";
 import { useCart, parsePrice } from "@/lib/cart";
-import shopHero from "@/assets/shop-hero-new.png";
+import shopHero from "@/assets/shop-hero-interior.jpg";
 
 const TITLE = "ÁREA Clothing Shop — Apparel, Wetsuits & Accessories";
 const DESC = "Shop the ÁREA line from Anza, Agadir: tees, hoodies and boardshorts, wetsuits and everyday accessories made for surfers.";
